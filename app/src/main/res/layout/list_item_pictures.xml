@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="picture"
+            type="com.example.pictures.db.Pictures" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardView.Light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:onClick="@{clickListener}"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="3dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                app:imageFromUrl="@{picture.hdurl}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="4dp"
+                android:gravity="center"
+                android:text="@{picture.title}"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                tools:text="anil" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
